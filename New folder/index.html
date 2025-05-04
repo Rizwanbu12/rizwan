@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Modern Clock</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white transition-colors duration-300">
+
+  <div class="min-h-screen flex flex-col items-center justify-center px-4 py-12 gap-10">
+    <!-- Digital Clock -->
+    <div class="text-center animate-entrance delay-100">
+      <div id="digital-time" class="text-5xl font-mono font-bold mb-2 tracking-widest">--:--:--</div>
+      <p id="date-text" class="text-gray-400 text-sm">Loading date...</p>
+    </div>
+
+    <!-- Clock Circles -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-12 sm:gap-16 animate-entrance delay-300">
+      
+   <!-- HOURS -->
+<div class="flex flex-col items-center gap-2 pulse-ring group transition-all duration-500 hover:scale-105">
+    <div class="relative w-40 h-40">
+      <svg class="absolute inset-0 w-full h-full">
+        <circle r="70" cx="50%" cy="50%" stroke-width="10" class="stroke-gray-700" fill="none" />
+        <circle id="hours" r="70" cx="50%" cy="50%" stroke-width="10" fill="none"
+                stroke="url(#hours-grad)" stroke-dasharray="439.8" stroke-dashoffset="439.8"
+                class="progress-circle" />
+        <defs>
+          <linearGradient id="hours-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#10b981" />
+            <stop offset="100%" stop-color="#22d3ee" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div id="hour-digit" class="absolute inset-0 flex items-center justify-center text-3xl font-bold text-emerald-400">--</div>
+    </div>
+    <div class="text-center text-sm font-bold tracking-wide text-emerald-300 animate-entrance">HOURS</div>
+  </div>
+  
+  <!-- MINUTES -->
+  <div class="flex flex-col items-center gap-2 pulse-ring group transition-all duration-500 hover:scale-105">
+    <div class="relative w-40 h-40">
+      <svg class="absolute inset-0 w-full h-full">
+        <circle r="70" cx="50%" cy="50%" stroke-width="10" class="stroke-gray-700" fill="none" />
+        <circle id="minutes" r="70" cx="50%" cy="50%" stroke-width="10" fill="none"
+                stroke="url(#minutes-grad)" stroke-dasharray="439.8" stroke-dashoffset="439.8"
+                class="progress-circle" />
+        <defs>
+          <linearGradient id="minutes-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3b82f6" />
+            <stop offset="100%" stop-color="#8b5cf6" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div id="minute-digit" class="absolute inset-0 flex items-center justify-center text-3xl font-bold text-indigo-300">--</div>
+    </div>
+    <div class="text-center text-sm font-bold tracking-wide text-indigo-300 animate-entrance">MINUTES</div>
+  </div>
+  
+  <!-- SECONDS -->
+  <div class="flex flex-col items-center gap-2 pulse-ring group transition-all duration-500 hover:scale-105">
+    <div class="relative w-40 h-40">
+      <svg class="absolute inset-0 w-full h-full">
+        <circle r="70" cx="50%" cy="50%" stroke-width="10" class="stroke-gray-700" fill="none" />
+        <circle id="seconds" r="70" cx="50%" cy="50%" stroke-width="10" fill="none"
+                stroke="url(#seconds-grad)" stroke-dasharray="439.8" stroke-dashoffset="439.8"
+                class="progress-circle" />
+        <defs>
+          <linearGradient id="seconds-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#f59e0b" />
+            <stop offset="100%" stop-color="#ef4444" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div id="second-digit" class="absolute inset-0 flex items-center justify-center text-3xl font-bold text-rose-300">--</div>
+    </div>
+    <div class="text-center text-sm font-bold tracking-wide text-rose-300 animate-entrance">SECONDS</div>
+  </div>
+  </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

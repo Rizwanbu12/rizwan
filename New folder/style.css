@@ -1,0 +1,39 @@
+html, body {
+    overflow-x: hidden;
+  }
+
+  .progress-circle {
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 0.7s ease-in-out;
+  }
+
+  .animate-entrance {
+    animation: entrance 1s ease-out forwards;
+  }
+
+  .pulse-ring {
+    animation: pulse 3s infinite ease-in-out;
+  }
+
+  @keyframes entrance {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+  }
